@@ -119,7 +119,7 @@
         
       ],
       image: 'src/assets/GameOfLife.png',
-      source_code_link: "https://github.com/",
+      source_code_link: "https://github.com/LoLaMatolA/GameOfLife",
     },
     {
       name: "Virtual Self-driving Car Simulator",
@@ -140,7 +140,7 @@
         },
       ],
       image: 'src/assets/virtualsdc.png',
-      source_code_link: "https://github.com/",
+      source_code_link: "https://github.com/LoLaMatolA/Virtual-Self-Driving-Car",
     },
     {
       name: "React Portfolio",
@@ -161,7 +161,7 @@
         },
       ],
       image: 'src/assets/portfolio.png',
-      source_code_link: "https://github.com/",
+      source_code_link: "https://github.com/LoLaMatolA/Portfolio",
     },
   ];
 
