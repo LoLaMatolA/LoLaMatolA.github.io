@@ -24,7 +24,7 @@ const Navbar = () => {
           setActive("");
           window.scrollTo(0,0);
         }}>
-          <img src={logo} alt="logo" className="w-9 h-9 object-contain"/>
+          <img src='src\assets\GameOfLife_Alive.png' alt="logo" className="w-9 h-9 object-contain"/>
           <p className='text-white flex'>Shruti Yadav</p><span className="sm:flex hidden text-white">| Lola</span>
 
         </Link>
