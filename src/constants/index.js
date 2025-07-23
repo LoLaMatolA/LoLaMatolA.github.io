@@ -56,8 +56,21 @@
       icon: 'src/assets/java.png',
     },
   ];
-  
- 
+
+  const social =[
+    {
+      title:"LinkedIn",
+      icon:'src/assets/linkedin.png' ,
+      link:'https://www.linkedin.com/in/shruti-yadav-027a36284?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BxctmK4uRQcah8DM12hRSWg%3D%3D',
+    },
+    {
+      title:"GitHub",
+      icon: 'src/assets/github.png',
+      link:'https://github.com/LoLaMatolA',
+    },
+  ];
+
+
   const experiences = [
     {
       title: "Samsung Innovation Campus - Big Data",
@@ -69,36 +82,38 @@
        
       ],
     },
-    {
-      title: "IBM Quantum Explorers",
-      type: "Certificate Course",
-      icon: 'src/assets/staricon.png',
-      iconBg: "#E6DEDD",
-      date: "June 2023 - Present",
-      points: [
+    
+    // {
+    //   title: "InternPe - Web Developer",
+    //   type: "Internship",
+    //   icon: 'src/assets/staricon.png',
+    //   iconBg: "#E6DEDD",
+    //   date: "July 2023 - August 2023",
+    //   points: [
         
-      ],
-    },
-    {
-      title: "InternPe - Web Developer",
-      type: "Internship",
-      icon: 'src/assets/staricon.png',
-      iconBg: "#E6DEDD",
-      date: "July 2023 - August 2023",
-      points: [
-        
-      ],
-    },
+    //   ],
+    // },
     {
       title: "TechnoHacks - Data Analytics",
       type: "Internship",
       icon: 'src/assets/staricon.png',
       iconBg: "#383E56",
-      date: "August 2023 - Present",
+      date: "August 2023 - September 2023",
       points: [
         
       ],
     },
+    {
+      title: "Google Cloud Study Jam",
+      type: "Certificate Course",
+      icon: 'src/assets/staricon.png',
+      iconBg: "#E6DEDD",
+      date: "September 2023",
+      points: [
+        "Currently pursuing M.Tech in Computer Science at IIT Guwahati.",
+        "Exploring various domains including software development, AI, and cybersecurity.",
+      ],
+    }
     
   ];
   
@@ -163,8 +178,33 @@
       image: 'src/assets/portfolio.png',
       source_code_link: "https://github.com/LoLaMatolA/Portfolio",
     },
+    {
+      name: "Heart Rate Monitor with React Website",
+      description:
+        "A heart rate monitoring system using Arduino that tracks users' pulse in real time. The data is displayed and logged through a React-based web dashboard, allowing continuous monitoring and user history tracking.",
+      tags: [
+        {
+          name: "React",
+          color: "blue-text-gradient",
+        },
+        {
+          name: "TailwindCSS",
+          color: "green-text-gradient",
+        },
+        {
+          name: "JavaScript",
+          color: "pink-text-gradient",
+        },
+        {
+          name: "Arduino",
+          color: "orange-text-gradient",
+        }
+      ],
+      image: 'src/assets/monitor.png',
+      source_code_link: "https://github.com/LoLaMatolA/Major_Project_Heart_Rate_Monitor",
+    },
   ];
 
 
   
-  export { services,experiences, projects, hobbies };
+  export { services,experiences, projects, hobbies, social };

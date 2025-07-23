@@ -1,81 +1,114 @@
-import React, { useRef, useState } from "react";
+// import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
-import emailjs from "@emailjs/browser";
-
+// import emailjs from "@emailjs/browser";
+import {social} from "../constants";
 import { styles } from "../styles";
 import { EarthCanvas } from "./canvas";
 import compContainer from '../hoc/compContainer';
 import { slideIn } from "../utils/motion";
+import {Tilt} from "react-tilt";
+import { fadeIn, textVariant } from "../utils/motion";
 
+const ServiceCardRound = ({ index, title, icon, link }) => (
+  <Tilt
+    className='w-[200px] h-[200px] cursor-pointer'
+  >
+    <motion.div
+      variants={fadeIn("right", "spring", index * 0.5, 0.75)}
+      className='w-full h-full red-galaxyblue-gradient p-[1px] rounded-full shadow-card'
+    >
+      <div
+      onClick={() => {
+          if (link) window.open(link, "_blank");
+        }}
+        className='bg-purple-500 rounded-full py-5 px-6 h-full w-full flex justify-evenly items-center flex-col'
+      >
+        <img
+          src={icon}
+          alt='service-icon'
+          className='w-16 h-16 object-contain'
+        />
+        <h3 className='text-white text-[20px] font-bold text-center'>
+          {title}
+        </h3>
+      </div>
+    </motion.div>
+  </Tilt>
+);
 const Contact = () => {
-  const formRef = useRef();
-  const [form, setForm] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
+  // const formRef = useRef();
+  // const [form, setForm] = useState({
+  //   name: "",
+  //   email: "",
+  //   message: "",
+  // });
 
-  const [loading, setLoading] = useState(false);
+  // const [loading, setLoading] = useState(false);
 
-  const handleChange = (e) => {
-    const { target } = e;
-    const { name, value } = target;
+  // const handleChange = (e) => {
+  //   const { target } = e;
+  //   const { name, value } = target;
 
-    setForm({
-      ...form,
-      [name]: value,
-    });
-  };
+  //   setForm({
+  //     ...form,
+  //     [name]: value,
+  //   });
+  // };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setLoading(true);
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   setLoading(true);
 
-    emailjs
-      .send(
-        'template_i231udb',
-        'service_s93io8e',
-        {
-          from_name: form.name,
-          to_name: "Shruti",
-          from_email: form.email,
-          to_email: "lolamatola15@gmail.com",
-          message: form.message,
-        },
-        'd-OVxKqG2bPPYRKrA'
-      )
-      .then(
-        () => {
-          setLoading(false);
-          alert("Thank you. I will get back to you as soon as possible.");
+  //   emailjs
+  //     .send(
+  //       'template_i231udb',
+  //       'service_s93io8e',
+  //       {
+  //         from_name: form.name,
+  //         to_name: "Shruti",
+  //         from_email: form.email,
+  //         to_email: "lolamatola15@gmail.com",
+  //         message: form.message,
+  //       },
+  //       'd-OVxKqG2bPPYRKrA'
+  //     )
+  //     .then(
+  //       () => {
+  //         setLoading(false);
+  //         alert("Thank you. I will get back to you as soon as possible.");
 
-          setForm({
-            name: "",
-            email: "",
-            message: "",
-          });
-        },
-        (error) => {
-          setLoading(false);
-          console.error(error);
+  //         setForm({
+  //           name: "",
+  //           email: "",
+  //           message: "",
+  //         });
+  //       },
+  //       (error) => {
+  //         setLoading(false);
+  //         console.error(error);
 
-          alert("Ahh, something went wrong. Please try again.");
-        }
-      );
-  };
+  //         alert("Ahh, something went wrong. Please try again.");
+  //       }
+  //     );
+  // };
 
   return (
     <div
-      className={`xl:mt-12 flex xl:flex-row flex-col-reverse gap-10 overflow-hidden`}
+      className={`xl:mt-12 flex xl:flex-row flex-col-reverse gap-20 overflow-hidden`}
     >
       <motion.div
         variants={slideIn("left", "tween", 0.2, 1)}
-        className='flex-[0.75] bg-black-100 p-8 rounded-2xl'
+        className='flex-[0.75] bg-black-100 p-8 rounded-2xl '
       >
         <p className={styles.sectionSubText}>Get in touch</p>
-        <h3 className={styles.sectionHeadText}>Contact.</h3>
+        <p>Email: shrutiyadav15oct@gmail.com</p>
+        {social.map((social,index)=>(
+        <ServiceCardRound  key={social.title} index={index} {...social}/>
+       ))}
+       
+        {/* <h3 className={styles.sectionHeadText}>Contact.</h3> */}
 
-        <form
+        {/* <form
           ref={formRef}
           onSubmit={handleSubmit}
           className='mt-12 flex flex-col gap-8'
@@ -120,7 +153,7 @@ const Contact = () => {
           >
             {loading ? "Sending..." : "Send"}
           </button>
-        </form>
+        </form> */}
       </motion.div>
 
       <motion.div

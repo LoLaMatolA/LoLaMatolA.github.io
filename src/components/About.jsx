@@ -46,7 +46,8 @@ const About = () => {
         variants={fadeIn("", "", 0.1, 1)}
         className='mt-4 ml-5 text-galaxyblue text-[17px] max-w-3xl leading-[30px]'
       >
-        I am a final year college student. I am currently exploring different areas in software and web development. My skills inlcude React.js, JavaScript, python, java, and a dab of Unity MLAgents and C. Also know how to play around with data using pandas library. 
+        I'm an M.Tech Computer Science student at IIT Guwahati, currently exploring diverse areas in software development, artificial intelligence, and cybersecurity.
+My technical skillset includes React.js, JavaScript, Python, Java, C, and basic experience with Unity ML-Agents. I'm also familiar with IoT technologies and have recently developed a growing interest in Linux systems and Capture The Flag (CTF) competitions.
       </motion.p>
       <div className='mt-20  justify-between flex flex-wrap gap-10'>
        {services.map((service,index)=>(
